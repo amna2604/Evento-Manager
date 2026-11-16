@@ -1,0 +1,14 @@
+# Maven
+target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+out/
+
+# Lokalna konfiguracija s lozinkom za bazu
+db.local.properties
+
+# OS
+.DS_Store
+Thumbs.db

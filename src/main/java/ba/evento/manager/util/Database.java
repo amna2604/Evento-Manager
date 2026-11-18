@@ -12,15 +12,38 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+import java.sql.ResultSet;
+
 
 public final class Database {
 
+    static final String DEMO_HASH_PLACEHOLDER = "NIJE-POSTAVLJENO";
     private Database() {
     }
 
 
     public static Connection getConnection() throws SQLException {
         return DriverManager.getConnection(AppConfig.dbUrl(), AppConfig.dbUser(), AppConfig.dbPassword());
+    }
+    public static void initialize() {
+        try (Connection con = getConnection()) {
+            runScript(con, "/db/schema.sql", null);
+            if (countUsers(con) == 0) {
+                runScript(con, "/db/seed.sql", DEMO_HASH_PLACEHOLDER);
+            }
+        } catch (SQLException e) {
+            throw new DataAccessException("Nije moguće povezati se s bazom (" + AppConfig.dbUrl() + ")", e);
+        }
+    }
+
+
+
+    private static int countUsers(Connection con) throws SQLException {
+        try (Statement st = con.createStatement();
+             ResultSet rs = st.executeQuery("SELECT COUNT(*) FROM users")) {
+            rs.next();
+            return rs.getInt(1);
+        }
     }
 
 

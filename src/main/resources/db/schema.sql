@@ -1,5 +1,3 @@
--- Evento Manager: struktura baze (MySQL 8+)
--- Skripta je idempotentna, pokrece se pri svakom startu aplikacije.
 
 CREATE TABLE IF NOT EXISTS cities (
                                       id   BIGINT AUTO_INCREMENT PRIMARY KEY,

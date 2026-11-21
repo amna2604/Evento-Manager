@@ -1,0 +1,189 @@
+
+.root {
+    -ev-bg: #f4f1fa;
+    -ev-surface: #ffffff;
+    -ev-surface-alt: #f8f5fd;
+    -ev-text: #1c1530;
+    -ev-muted: #6f6788;
+    -ev-border: #e3dcf1;
+    -ev-accent: #7340f0;
+    -ev-accent-dark: #5f2fd6;
+    -ev-accent-soft: #ece4ff;
+    -ev-sidebar: #0b0714;
+    -ev-sidebar-hover: #1b1230;
+    -ev-danger: #d64560;
+    -ev-success: #1f9d6b;
+    -ev-selection: #e6dcff;
+
+    -fx-font-family: "Segoe UI", "Inter", "Helvetica Neue", Arial, sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: -ev-bg;
+    -fx-base: -ev-surface;
+    -fx-text-fill: -ev-text;
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.root.dark {
+    -ev-bg: #0a0710;
+    -ev-surface: #130e1f;
+    -ev-surface-alt: #1a1429;
+    -ev-text: #f1edf9;
+    -ev-muted: #9a90b3;
+    -ev-border: #2b2145;
+    -ev-accent: #7c4dff;
+    -ev-accent-dark: #6a3de8;
+    -ev-accent-soft: #2a1f4d;
+    -ev-sidebar: #05030a;
+    -ev-sidebar-hover: #19112d;
+    -ev-selection: #2d2250;
+    -fx-base: #130e1f;
+}
+
+.root.dark .button.primary {
+    -fx-effect: dropshadow(gaussian, rgba(124, 77, 255, 0.55), 14, 0.1, 0, 0);
+}
+
+.label {
+    -fx-text-fill: -ev-text;
+}
+
+.muted {
+    -fx-text-fill: -ev-muted;
+}
+
+/* ---------- ikone ---------- */
+
+.icon {
+    -fx-fill: transparent;
+    -fx-stroke: -ev-text;
+    -fx-stroke-width: 1.8;
+    -fx-stroke-line-cap: round;
+    -fx-stroke-line-join: round;
+}
+
+.brand-mark .icon,
+.logo-box .icon {
+    -fx-stroke: #a78bfa;
+    -fx-fill: #a78bfa;
+}
+
+/* ---------- prijava ---------- */
+
+.login-root {
+    -fx-background-color: -ev-surface;
+}
+
+.login-brand {
+    -fx-background-color: linear-gradient(to bottom right, #05030a, #1a0f3a);
+    -fx-padding: 56;
+}
+
+.logo-box {
+    -fx-background-color: #000000;
+    -fx-background-radius: 100;
+    -fx-border-color: #8b5cff;
+    -fx-border-width: 3;
+    -fx-border-radius: 100;
+    -fx-effect: dropshadow(gaussian, rgba(124, 77, 255, 0.9), 26, 0.25, 0, 0);
+}
+
+.brand-big {
+    -fx-text-fill: white;
+    -fx-font-size: 40px;
+    -fx-font-weight: bold;
+}
+
+.brand-big-light {
+    -fx-text-fill: #a78bfa;
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+.brand-tagline {
+    -fx-text-fill: #b3a6d4;
+    -fx-font-size: 14px;
+    -fx-padding: 12 0 0 0;
+}
+
+.login-form {
+    -fx-background-color: -ev-surface;
+    -fx-padding: 40;
+}
+
+.login-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+}
+
+/* ---------- dugmad ---------- */
+
+.button {
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+    -fx-padding: 8 16 8 16;
+}
+
+.button.primary {
+    -fx-background-color: -ev-accent;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.button.primary:hover {
+    -fx-background-color: -ev-accent-dark;
+}
+
+.button.primary .icon {
+    -fx-stroke: white;
+}
+
+.button.primary:disabled {
+    -fx-opacity: 0.5;
+}
+
+.button.secondary {
+    -fx-background-color: -ev-surface;
+    -fx-border-color: -ev-border;
+    -fx-border-radius: 8;
+    -fx-text-fill: -ev-text;
+}
+
+.button.secondary:hover {
+    -fx-background-color: -ev-surface-alt;
+}
+
+.button.link-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: -ev-accent;
+    -fx-font-weight: bold;
+    -fx-padding: 2 4 2 4;
+}
+
+/* ---------- polja za unos ---------- */
+
+.text-field,
+.password-field {
+    -fx-background-color: -ev-surface;
+    -fx-background-radius: 8;
+    -fx-border-color: -ev-border;
+    -fx-border-radius: 8;
+    -fx-text-fill: -ev-text;
+    -fx-prompt-text-fill: #9aa8bb;
+    -fx-padding: 8 10 8 10;
+}
+
+.form-label {
+    -fx-font-weight: bold;
+    -fx-text-fill: -ev-muted;
+    -fx-font-size: 12px;
+}
+
+.form-error {
+    -fx-text-fill: -ev-danger;
+    -fx-font-weight: bold;
+}
+
+.check-box .text {
+    -fx-fill: -ev-text;
+}

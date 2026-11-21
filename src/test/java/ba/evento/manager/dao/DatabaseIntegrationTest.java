@@ -2,6 +2,7 @@ package ba.evento.manager.dao;
 
 import ba.evento.manager.model.User;
 import ba.evento.manager.util.Database;
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
@@ -34,8 +35,8 @@ class DatabaseIntegrationTest {
 
     @Test
     void citiesAndClientsAreSeeded() {
-        assertFalse(new CityDao().findAll().isEmpty());
-        assertFalse(new ClientDao().findAll().isEmpty());
+        Assertions.assertFalse(new CityDao().findAll().isEmpty());
+        Assertions.assertFalse(new ClientDao().findAll().isEmpty());
     }
 
     @Test

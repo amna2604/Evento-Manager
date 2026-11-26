@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ToggleButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="root" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="ba.evento.manager.controller.MainController" styleClass="main-root">
+    <fx:define>
+        <ToggleGroup fx:id="navGroup"/>
+    </fx:define>
+
+    <left>
+        <VBox styleClass="sidebar" prefWidth="236" minWidth="236" maxWidth="236">
+            <HBox fx:id="brandBox" styleClass="brand" alignment="CENTER_LEFT" spacing="10"/>
+            <VBox styleClass="nav-list" spacing="4">
+                <ToggleButton fx:id="navHome" text="Početna" toggleGroup="$navGroup" styleClass="nav-button"
+                              maxWidth="Infinity" graphicTextGap="14"/>
+                <ToggleButton fx:id="navPromotions" text="Promocije" toggleGroup="$navGroup" styleClass="nav-button"
+                              maxWidth="Infinity" graphicTextGap="14"/>
+                <ToggleButton fx:id="navPromoters" text="Promoteri" toggleGroup="$navGroup" styleClass="nav-button"
+                              maxWidth="Infinity" graphicTextGap="14"/>
+                <ToggleButton fx:id="navStock" text="Zalihe i oprema" toggleGroup="$navGroup" styleClass="nav-button"
+                              maxWidth="Infinity" graphicTextGap="14"/>
+                <ToggleButton fx:id="navReports" text="Izvještaji" toggleGroup="$navGroup" styleClass="nav-button"
+                              maxWidth="Infinity" graphicTextGap="14"/>
+                <ToggleButton fx:id="navSettings" text="Postavke" toggleGroup="$navGroup" styleClass="nav-button"
+                              maxWidth="Infinity" graphicTextGap="14"/>
+            </VBox>
+            <Region VBox.vgrow="ALWAYS"/>
+            <HBox styleClass="user-card" alignment="CENTER_LEFT" spacing="12">
+                <Label fx:id="avatar" styleClass="avatar" alignment="CENTER" minWidth="38" minHeight="38"/>
+                <VBox spacing="1">
+                    <Label fx:id="userName" styleClass="user-name"/>
+                    <Label fx:id="userRole" styleClass="user-role"/>
+                </VBox>
+            </HBox>
+        </VBox>
+    </left>
+
+
+    <center>
+        <VBox>
+            <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="10">
+                <Label fx:id="pageTitle" styleClass="page-title"/>
+                <Pane HBox.hgrow="ALWAYS"/>
+                <Button fx:id="logoutButton" text="Odjavi" styleClass="logout-button" onAction="#onLogout"
+                        graphicTextGap="8"/>
+            </HBox>
+            <StackPane fx:id="content" VBox.vgrow="ALWAYS"/>
+        </VBox>
+    </center>
+</BorderPane>

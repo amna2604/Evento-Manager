@@ -6,6 +6,7 @@ import ba.evento.manager.service.Session;
 import ba.evento.manager.util.Branding;
 import ba.evento.manager.util.Dialogs;
 import ba.evento.manager.util.Icons;
+import ba.evento.manager.util.Theme;
 import ba.evento.manager.util.ViewLoader;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -39,6 +40,8 @@ public class MainController {
     private Label userRole;
     @FXML
     private Label avatar;
+    @FXML
+    private Button themeButton;
     @FXML
     private Button logoutButton;
     @FXML
@@ -78,6 +81,7 @@ public class MainController {
         navReports.setGraphic(Icons.of("chart", 19));
         navSettings.setGraphic(Icons.of("sliders", 19));
         logoutButton.setGraphic(Icons.of("logout", 17));
+        updateThemeButton();
 
         showBrand();
 
@@ -133,8 +137,19 @@ public class MainController {
     }
 
     @FXML
+    private void onToggleTheme() {
+        Theme.setDark(!Theme.isDark());
+        Theme.apply(root);
+        updateThemeButton();
+    }
+
+    @FXML
     private void onLogout() {
         Main.showLogin();
+    }
+
+    private void updateThemeButton() {
+        themeButton.setText(Theme.isDark() ? "Svijetla tema" : "Tamna tema");
     }
 
 

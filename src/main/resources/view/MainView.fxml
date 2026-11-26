@@ -17,6 +17,7 @@
         <ToggleGroup fx:id="navGroup"/>
     </fx:define>
 
+    <!-- lijevo:logo, meni i kartica korisnika -->
     <left>
         <VBox styleClass="sidebar" prefWidth="236" minWidth="236" maxWidth="236">
             <HBox fx:id="brandBox" styleClass="brand" alignment="CENTER_LEFT" spacing="10"/>
@@ -45,12 +46,13 @@
         </VBox>
     </left>
 
-
+    <!-- desno:gornja traka i prostor u kojem se mijenjaju ekrani -->
     <center>
         <VBox>
             <HBox styleClass="topbar" alignment="CENTER_LEFT" spacing="10">
                 <Label fx:id="pageTitle" styleClass="page-title"/>
                 <Pane HBox.hgrow="ALWAYS"/>
+                <Button fx:id="themeButton" styleClass="theme-button" onAction="#onToggleTheme"/>
                 <Button fx:id="logoutButton" text="Odjavi" styleClass="logout-button" onAction="#onLogout"
                         graphicTextGap="8"/>
             </HBox>

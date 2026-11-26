@@ -29,7 +29,7 @@ public final class Database {
         try (Connection con = getConnection()) {
             runScript(con, "/db/schema.sql", null);
             if (countUsers(con) == 0) {
-                runScript(con, "/db/seed.sql", DEMO_HASH_PLACEHOLDER);
+                runScript(con, "/db/seed.sql", PasswordHasher.hash("evento123"));
             }
         } catch (SQLException e) {
             throw new DataAccessException("Nije moguće povezati se s bazom (" + AppConfig.dbUrl() + ")", e);
